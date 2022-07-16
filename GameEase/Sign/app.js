@@ -35,7 +35,7 @@ function getInfo(){
 
     for (i =0; i < userdata.length; i++){
         if(username == userdata[i].username && password == userdata[i].password){
-        	window.location.href="testing.html";
+        	window.location.href="../Home/index.html";
             alert("Welcome"+ " "+ username);
             return
             }
