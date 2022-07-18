@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+	<title>GameEase | Dashboard</title>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="logo_content">
+			<div class="logo">
+				<i class='bx bxs-doughnut-chart' ></i>
+				<div class="logo_name">GameEase</div>
+			</div>
+			<i class='bx bx-menu' id="btn"></i>
+		</div>
+		<ul class="nav_list">
+			<li>
+				<a href="#">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="links_name">Dashboard</span>
+				</a>
+				<span class="tooltip">Dashboard</span>
+			</li>
+			<li>
+				<a href="../2GameTracker/index.html">
+					<i class='bx bx-stopwatch' ></i>
+					<span class="links_name">Gaming Tracker</span>
+				</a>
+				<span class="tooltip">Tracker</span>
+			</li>
+			<li>
+				<a href="../3GameAlarm/index.html">
+					<i class='bx bx-alarm-add' ></i>
+					<span class="links_name">Game Alarm</span>
+				</a>
+				<span class="tooltip">Game Alarm</span>
+			</li>
+			<li>
+				<a href="../4Analytics/index.html">
+					<i class='bx bx-analyse' ></i>
+					<span class="links_name">Analytics</span>
+				</a>
+				<span class="tooltip">Analytics</span>
+			</li>
+			<li>
+				<a href="../5Settings/index.html">
+					<i class='bx bx-cog' ></i>
+					<span class="links_name">Settings</span>
+				</a>
+				<span class="tooltip">Settings</span>
+			</li>
+		</ul>
+		<div class="profile_content">
+			<div class="profile">
+				<div class="profile_details">
+					<!--<img src="img/face-1.png">-->
+					<div class="name_sn">
+						<div class="name">Angelo Mari Santos</div>
+						<div class="number">2020-12431-MN-0</div>
+					</div>
+				</div>
+				<a href="../Sign/index.html">
+					<i class='bx bx-log-out' id="log_out" ></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="home_content">
+		<div class="text">Dashboard</div>
+		<div class="context">
+			This is for the dashboard <br>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+			The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+		</div>
+	</div>
+
+
+	<script>
+		let btn = document.querySelector("#btn");
+		let sidebar = document.querySelector(".sidebar");
+
+		btn.onclick = function() {
+			sidebar.classList.toggle("active");
+		}
+
+	</script>
+</body>
+</html>
