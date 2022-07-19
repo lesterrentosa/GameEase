@@ -72,9 +72,18 @@
 	<div class="home_content">
 		<div class="text">Game Timer</div>
 		<div class="context">
-			This is for the Game Timer <br>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-			The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+			This is for the Game Tracker
+		</div>
+		<div class="watch">
+			<div class="time">
+				00:00:00
+			</div>
+			<div class="controls">
+				<button id="start">Start</button>
+				<button id="pause" style="display: none">Stop</button>
+				<button id="reset">Reset</button>
+				<button id="save">Save</button>
+			</div>		
 		</div>
 	</div>
 
@@ -87,6 +96,58 @@
 			sidebar.classList.toggle("active");
 		}
 
+		//CLock Script//
+		const time_el = document.querySelector('.watch .time');
+		const start_btn = document.getElementById('start');
+		const stop_btn = document.getElementById('pause');
+		const reset_btn = document.getElementById('reset');
+		const save_btn = document.getElementById('save');
+
+		let seconds = 0;
+		let interval ;
+
+		//Event listeners pag clinick yung buttons//
+		start_btn.addEventListener('click', () =>{
+			clearInterval(interval);
+			interval = setInterval(timer, 1000);
+			start.style.display = "none";
+			pause.style.display = "block";
+		})
+		stop_btn.addEventListener('click', () =>{
+			clearInterval(interval);
+			start.style.display = "block";
+			pause.style.display = "none";
+
+		})
+		reset_btn.addEventListener('click', () =>{
+			 clearInterval(interval);
+			 seconds = 0;
+			 time_el.innerText = '00:00:00';
+			 pause.style.display = "none";
+		     start.style.display = "block";
+		});
+		
+		save_btn.addEventListener('click',() =>{
+			console.log(time_el);
+		})
+
+		//timer function
+
+		function timer(){
+			seconds++;
+
+			let hrs = Math.floor(seconds / 3600);
+			let mins = Math.floor((seconds-(hrs*3600))/ 60);
+			let secs = seconds % 60;
+
+			if(secs < 10) secs = '0' + secs;
+			if(mins < 10) mins = '0' + mins;
+			if(hrs < 10) hrs = '0' + hrs;
+
+			time_el.innerText = `${hrs}:${mins}:${secs}`;
+		}
 	</script>
+
+
 </body>
 </html>

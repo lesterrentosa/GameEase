@@ -228,7 +228,7 @@ body{
 	width: calc(100% - 78px);
 	left: 78px;
 	background: #0f0e0e;
-	z-index: -1;
+	z-index: 1;
 	transition: all 0.5s ease;
 
 }
@@ -249,4 +249,56 @@ body{
 .sidebar.active ~ .home_content{
 	width: calc(100% - 240px);
 	left: 240px;
+}
+
+/* STOP WATCH CSS*/
+
+.watch{
+	text-align: center;
+	background: #6e091a;
+	width: 100%;
+	max-width: 360px;
+	margin: 4rem auto;
+	padding: 1rem 2rem;
+	border-radius: 1rem;
+	overflow: hidden;
+	flex-direction: column;
+
+}
+
+.time{
+	font-size: 5rem;
+	font-weight: 300;
+	margin-bottom: 1rem;
+	font-family: "Fira sans", sans-serif;
+
+}
+
+.controls{
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;	
+}
+
+.controls button{
+	appearance: none;
+	background: none;
+	outline: none;
+	border: none;
+	user-select: none;
+	
+
+	color: #fff;
+	font-size: 1rem;
+	background-color: #0f0e0e;
+	margin: 0 0.5rem;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+
+	transition: 0.4s;
+}
+
+button:active{
+	background-color: #6e091a;
 }
